@@ -1,0 +1,50 @@
+:root {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Soft pink color palette */
+  --pink-50: #fdf2f4;
+  --pink-100: #fce7eb;
+  --pink-200: #f9d2db;
+  --pink-300: #f4b5c4;
+  --pink-400: #ec8fa5;
+  --pink-500: #e06b88;
+  --pink-600: #cc4d6e;
+  --pink-700: #ac3d5a;
+  --pink-800: #8f354c;
+  --pink-900: #772f42;
+
+  color-scheme: light;
+  color: var(--pink-900);
+  background: linear-gradient(135deg, #fdf2f4 0%, #fce7eb 50%, #f9d2db 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: var(--pink-600);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pink-700);
+}
