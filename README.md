@@ -59,19 +59,3 @@ npm run dev
 ```
 
 Then visit **http://localhost:5173** in your browser.
-
-## Using Ruby on Rails Instead
-
-If you prefer Rails for the backend:
-
-1. Install Ruby and Rails
-2. From the project root:
-   ```powershell
-   rails new backend --api
-   cd backend
-   bundle install
-   rails server -p 3001
-   ```
-3. Update the Vite proxy in `frontend/vite.config.js` to point to `http://localhost:3001`
-
-The frontend is ready to work with any backend that exposes REST APIs.

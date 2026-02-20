@@ -17,7 +17,7 @@ main {
 
 .section h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   color: var(--pink-800);
@@ -57,7 +57,7 @@ main {
 
 .hero h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
   font-weight: 600;
   color: var(--pink-900);
   margin: 0 0 1rem;
@@ -67,7 +67,7 @@ main {
 
 .tagline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   color: var(--pink-700);
   margin: 0 0 2rem;
   line-height: 1.6;
@@ -108,4 +108,272 @@ main {
 .btn-secondary:hover {
   border-color: var(--pink-600);
   color: var(--pink-800);
+}
+
+/* Experience section – 70% of viewport width */
+.experience-section {
+  align-items: stretch;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+@media (max-width: 700px) {
+  .experience-section {
+    width: 100%;
+  }
+}
+
+/* Skills section – below experience, compact tags */
+.skills-section {
+  align-items: stretch;
+  width: 70%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding: 1.25rem 2rem 2rem;
+  min-height: auto;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  border: 1px solid var(--pink-200);
+  justify-content: flex-start;
+}
+
+.skills-section h2 {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .skills-section {
+    width: 100%;
+  }
+}
+
+.experience-content {
+  width: 100%;
+  text-align: left;
+}
+
+/* Radix Accordion – expansion panels */
+.experience-accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.experience-panel {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--pink-200);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-panel:hover {
+  border-color: var(--pink-300);
+}
+
+.experience-panel[data-state="open"] {
+  border-color: var(--pink-400);
+  box-shadow: 0 4px 20px rgba(143, 53, 76, 0.1);
+}
+
+.experience-panel-header {
+  margin: 0;
+}
+
+.experience-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.experience-trigger:hover {
+  background: rgba(252, 231, 235, 0.5);
+}
+
+.experience-logo {
+  width: 128px;
+  height: 84px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.experience-trigger-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pink-800);
+  margin-right: 0.75rem;
+}
+
+.experience-trigger-date {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--pink-700);
+  text-align: right;
+}
+
+.experience-chevron {
+  flex-shrink: 0;
+  color: var(--pink-600);
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experience-panel[data-state="open"] .experience-chevron {
+  transform: rotate(180deg);
+}
+
+.experience-content-inner {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.experience-content-inner[data-state="open"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content-body {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem 1.25rem;
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+}
+
+.experience-content-inner[data-state="open"] .accordion-content-body {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.job-company {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--pink-800);
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--pink-200);
+}
+
+.job-role {
+  margin-bottom: 1rem;
+}
+
+.job-role:last-child {
+  margin-bottom: 0;
+}
+
+.role-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.role-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--pink-700);
+  margin: 0;
+}
+
+.role-date {
+  font-size: 0.95rem;
+  color: var(--pink-500);
+}
+
+.role-bullets {
+  margin: 0 0 0 1.25rem;
+  padding: 0;
+  list-style: disc;
+  color: var(--pink-800);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.role-bullets li {
+  margin-bottom: 0.35rem;
+}
+
+.role-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+/* Education page – degree details inside accordion */
+.education-details {
+  margin: 0;
+}
+
+.education-degree {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--pink-700);
+  margin: 0 0 0.35rem;
+}
+
+.education-meta,
+.education-date {
+  font-size: 1.05rem;
+  color: var(--pink-800);
+  margin: 0 0 0.25rem;
+}
+
+.education-date {
+  color: var(--pink-600);
+  font-weight: 500;
+}
+
+/* Skills section – same width as experience */
+.skills-section {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: var(--pink-100);
+  color: var(--pink-800);
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid var(--pink-200);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: var(--pink-200);
+  border-color: var(--pink-300);
 }
